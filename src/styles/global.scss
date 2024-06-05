@@ -1,0 +1,102 @@
+@use './vars';
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: vars.$dark;
+  color: vars.$white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  &::-webkit-scrollbar {
+    height: 0.4em;
+    width: 0.4em;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-left-color: vars.$gray;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: vars.$gray;
+    border: 1px solid vars.$green;
+    opacity: 0.1;
+  }
+}
+
+.main {
+  height: calc(100% - 100px);
+  overflow-y: hidden;
+}
+
+.container {
+  height: 100%;
+  margin: 0 auto;
+  max-width: 1240px;
+  padding: 0 15px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.btn {
+  display: block;
+  background: transparent;
+  border: 1px solid vars.$green;
+  color: vars.$green;
+  padding: 0.5em 2em;
+  font-size: 1.1em;
+  font-weight: 700;
+  margin: 0 auto;
+  transition: color 0.3s ease;
+  cursor: pointer;
+
+  &:disabled {
+    border-color: vars.$gray;
+    color: vars.$gray;
+  }
+
+  &:not(:disabled):hover {
+    color: vars.$dark;
+    background-color: vars.$green;
+  }
+
+  &:active {
+    background-color: vars.$darkGreen;
+  }
+}
+
+.close-btn {
+  background-color: transparent;
+  border: none;
+  opacity: 0.4;
+  padding: 0.5em;
+  cursor: pointer;
+  font-size: 1.2em;
+  line-height: 1.2em;
+  color: vars.$white;
+  
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.link {
+  text-decoration: none;
+}
+
+

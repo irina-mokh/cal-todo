@@ -1,0 +1,15 @@
+@use '../../styles/vars';
+
+
+.header {
+	height: 60px;
+	background-color: vars.$darkGreen;
+
+	&__wrapper {
+		height: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	
+}
