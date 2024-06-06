@@ -14,14 +14,16 @@ export const Agenda = ({ date, tasks }: AgendaProps) => {
   const dispatch = useDispatch();
   const handleAddTask = (e: React.FocusEvent<HTMLFormElement>) => {
     e.preventDefault();
-    dispatch(
-      createTask({
-        id: new Date().getTime(),
-        title,
-        date: date.toLocaleDateString(),
-        done: false,
-      })
-    );
+    if (title) {
+      dispatch(
+        createTask({
+          id: new Date().getTime(),
+          title,
+          date: date.toLocaleDateString(),
+          done: false,
+        })
+      );
+    }
     setTitle('');
   };
   const renderTasks = (tasks: ITask[]) => tasks.map((data) => <Task key={data.id} {...data} />);
@@ -42,7 +44,7 @@ export const Agenda = ({ date, tasks }: AgendaProps) => {
           onChange={(e) => setTitle(e.target.value)}
           value={title}
         ></input>
-        <input className="btn" type="submit" value="+" />
+        <input className="btn" type="submit" value="+" disabled={!title.length} />
       </form>
       <ul>{renderActiveTasks}</ul>
       {done.length > 0 && (

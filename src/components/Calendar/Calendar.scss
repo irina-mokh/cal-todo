@@ -5,11 +5,12 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		margin: 0.5em 0;
 	}
 	
 	&__year {
 		color: vars.$gray;
-		text-align: center;
+		margin-left: 2em;
 	}
 	&__month {
 		flex-grow: 1;
@@ -21,7 +22,6 @@
 	&__controls{
 		display: flex;
 		justify-content: space-between;
-		padding: 5px;
 		max-width: 150px;
 	}
 

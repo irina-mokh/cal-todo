@@ -58,18 +58,18 @@ export const Calendar = () => {
 
   return (
     <section className={`calendar ${!isMonthView ? 'calendar_week' : ''}`}>
-      <h2 className="calendar__year">{y}</h2>
       <header className="calendar__header">
         <Switcher handleToggle={toggleView} />
         <p className="calendar__month">{MONTH_NAMES[m]}</p>
         <div className="calendar__controls">
           <button className="btn" onClick={handlePrev}>
-            &#12296;
+            &lt;
           </button>
           <button className="btn" onClick={handleNext}>
-            &#12297;
+            &gt;
           </button>
         </div>
+        <h2 className="calendar__year">{y}</h2>
       </header>
       <ul className="calendar__heading">{headingRender}</ul>
 

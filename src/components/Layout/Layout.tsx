@@ -4,11 +4,11 @@ import { Home } from '../Home/Home';
 
 export const Layout = () => {
   return (
-      <>
-        <Header />
-        <Home />
-        {/* <Outlet /> */}
-        <Footer />
-      </>
+    <>
+      <Header />
+      <Home />
+      {/* <Outlet /> */}
+      <Footer />
+    </>
   );
 };

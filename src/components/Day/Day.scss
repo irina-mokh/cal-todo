@@ -4,15 +4,15 @@
 	list-style: none;
 	padding: 5px;
 	border: 1px solid vars.$darkGray;
-	height: 80px;
+	height: 90px;
 	overflow: hidden;
 	&:hover {
 		border-color: vars.$green;
 	}
 
 	&__date {
-		width: 30px;
-		height: 30px;
+		width: 35px;
+		height: 35px;
 		padding: 10px;
 		margin-bottom: 5px;
 		display: flex;
@@ -20,6 +20,11 @@
 		align-items: center;
 		font-size: 1.1em;
 		border: 2px solid transparent;
+		@media (max-width: vars.$mediumScreen) {
+			font-size: 14px;
+			width: 30px;
+			height: 30px;
+		}
 		&_today {
 			border-radius: 50%;
 			background-color: vars.$darkGreen;
@@ -31,7 +36,7 @@
 		}
 	}
 	.calendar_week & {
-		min-height: 200px;
+		min-height: 300px;
 		height: 100%;
 	}
 }

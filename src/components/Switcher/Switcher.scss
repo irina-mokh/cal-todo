@@ -4,7 +4,7 @@
   &__input {
     // display: none;
     &:checked ~ .switcher__bar::after {
-      transform: translateX(18px);
+      transform: translateX(15px);
     }
   }
   display: flex;
