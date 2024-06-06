@@ -1,5 +1,5 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import mainReducer from './reducer';
+import tasksReducer from './tasksReducer';
 
 const persistedState = () => {
   let state;
@@ -12,16 +12,17 @@ const persistedState = () => {
   return state;
 };
 const rootReducer = combineReducers({
-  main: mainReducer,
+  // date: dateReducer,
+  tasks: tasksReducer,
 });
 
 export const store = configureStore({
   preloadedState: persistedState(),
-  reducer: rootReducer
+  reducer: rootReducer,
 });
 
 store.subscribe(() => {
-  // console.log('persist:', store.getState());
+  console.log('persist:', store.getState());
   localStorage.setItem('reduxState', JSON.stringify(store.getState()));
 });
 

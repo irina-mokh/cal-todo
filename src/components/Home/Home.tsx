@@ -1,15 +1,10 @@
-import { useSelector } from 'react-redux';
-import { IState } from '../../types';
+import { Calendar } from '../Calendar/Calendar';
 
 export const Home = () => {
-  const store = [...useSelector((state: IState) => state.main)];
-  
   return (
     <main className="home">
-      <div className="container"> 
-        <section>
-          {/* <ul className="months">{weeks}</ul> */}
-        </section>
+      <div className="container">
+        <Calendar />
       </div>
     </main>
   );

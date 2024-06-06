@@ -58,12 +58,13 @@ body {
   background: transparent;
   border: 1px solid vars.$green;
   color: vars.$green;
-  padding: 0.5em 2em;
+  padding: 5px 15px;
   font-size: 1.1em;
   font-weight: 700;
   margin: 0 auto;
   transition: color 0.3s ease;
   cursor: pointer;
+  margin: 7px;
 
   &:disabled {
     border-color: vars.$gray;

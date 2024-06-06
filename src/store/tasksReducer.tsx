@@ -1,15 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { ITask } from '../types';
+import { TasksState } from '../types';
 
-export const INITIAL_TASK = {
-  id: '',
-  title: '',
-  done: false,
-};
-const initialState: Array<ITask> = [];
+// export const INITIAL_TASK = {
+//   id: '',
+//   title: '',
+//   done: false,
+// };
+const initialState: TasksState = [];
 
-export const mainSlice = createSlice({
-  name: 'main',
+export const tasksSlice = createSlice({
+  name: 'tasks',
   initialState,
   reducers: {
     createTask: (state, { payload }) => {
@@ -29,6 +29,6 @@ export const {
   createTask,
   editTask,
   deleteTask,
-} = mainSlice.actions;
+} = tasksSlice.actions;
 
-export default mainSlice.reducer;
+export default tasksSlice.reducer;

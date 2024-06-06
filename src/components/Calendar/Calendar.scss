@@ -1,0 +1,40 @@
+@use '../../styles/vars';
+
+.calendar {
+	&__header{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	
+	&__year {
+		color: vars.$gray;
+		text-align: center;
+	}
+	&__month {
+		font-size: 1.5em;
+		font-weight: 600;
+	}
+	
+	&__controls{
+		display: flex;
+		justify-content: space-between;
+		padding: 5px;
+		max-width: 150px;
+	}
+
+	&__heading,
+	&__list{
+		display: grid;
+		grid-template-columns: repeat(7, 1fr);
+	}
+
+	&__weekday {
+		list-style: none;
+		background-color: vars.$darkGray;
+		padding: 7px;
+		font-weight: 600;
+		border: 1px solid vars.$gray;
+		text-align: center;
+	}
+}
