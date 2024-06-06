@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { getDates } from '../../utils.tsx';
+import { getDates, getNumOfDays, slideToDate } from '../../utils.tsx';
 import { Day } from '../Day/Day';
 import { useDateIndexes } from '../../hooks';
 
@@ -21,8 +21,19 @@ const WEEK_NAMES = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
 export const Calendar = () => {
   const now = new Date();
+
   const [date, setDate] = useState<Date>(now);
   const { y, m } = useDateIndexes(date);
+  const [step, setStep] = useState(getNumOfDays(y, m));
+
+  const handleNext = () => {
+    setDate(slideToDate(date, step));
+  };
+
+  const handlePrev = () => {
+    setDate(slideToDate(date, -step));
+  };
+
   const days = getDates(date);
 
   const daysRender = days.map((day, index) => <Day key={day.toDateString() + index} date={day} />);
@@ -38,8 +49,12 @@ export const Calendar = () => {
       <header className="calendar__header">
         <p className="calendar__month">{MONTH_NAMES[m]}</p>
         <div className="calendar__controls">
-          <button className="btn">&#12296;</button>
-          <button className="btn">&#12297;</button>
+          <button className="btn" onClick={handlePrev}>
+            &#12296;
+          </button>
+          <button className="btn" onClick={handleNext}>
+            &#12297;
+          </button>
         </div>
       </header>
       <ul className="calendar__heading">{headingRender}</ul>

@@ -28,3 +28,9 @@ export const getDates = (date: Date, month = true) => {
   }
   return days;
 };
+
+export const slideToDate = (date: Date, step: number) => {
+  const newDate = new Date(date);
+  newDate.setDate(newDate.getDate() + step);
+  return newDate;
+};
