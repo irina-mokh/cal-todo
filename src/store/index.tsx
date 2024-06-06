@@ -22,7 +22,6 @@ export const store = configureStore({
 });
 
 store.subscribe(() => {
-  console.log('persist:', store.getState());
   localStorage.setItem('reduxState', JSON.stringify(store.getState()));
 });
 

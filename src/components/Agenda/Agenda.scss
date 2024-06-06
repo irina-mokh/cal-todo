@@ -1,8 +1,18 @@
 .agenda {
 	min-height: 50vh;
+	min-width: 300px;
 	&__add {
 		display: flex;
-		align-items: center;
+		align-items: stretch;
 		justify-content: space-between;
+		margin-bottom: 7px;
+		font-size: 1.2em;
+
+		.input {
+			font-size: inherit;
+			flex-grow: 1;
+			min-width: 0;
+			width: 0;
+		}
 	}
 }

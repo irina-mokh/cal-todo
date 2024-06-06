@@ -16,7 +16,7 @@ export const Agenda = ({ date, tasks }: AgendaProps) => {
     e.preventDefault();
     dispatch(
       createTask({
-        id: new Date(),
+        id: new Date().getTime(),
         title,
         date: date.toLocaleDateString(),
         done: false,
@@ -25,9 +25,12 @@ export const Agenda = ({ date, tasks }: AgendaProps) => {
     setTitle('');
   };
   const renderTasks = (tasks: ITask[]) => tasks.map((data) => <Task key={data.id} {...data} />);
-  const renderDoneTasks = renderTasks(tasks.filter((t) => t.done));
 
-  const renderActiveTasks = renderTasks(tasks.filter((t) => !t.done));
+  const done = tasks.filter((t) => t.done);
+  const active = tasks.filter((t) => !t.done);
+  const renderDoneTasks = renderTasks(done);
+
+  const renderActiveTasks = renderTasks(active);
 
   return (
     <div className="agenda">
@@ -42,7 +45,12 @@ export const Agenda = ({ date, tasks }: AgendaProps) => {
         <input className="btn" type="submit" value="+" />
       </form>
       <ul>{renderActiveTasks}</ul>
-      <ul>{renderDoneTasks}</ul>
+      {done.length > 0 && (
+        <>
+          <p>Done:</p>
+          <ul>{renderDoneTasks}</ul>
+        </>
+      )}
     </div>
   );
 };

@@ -24,7 +24,7 @@ export const Day = ({ date }: DayProps) => {
   const tasks = useSelector(selectTasksByDay);
   const renderTaskThumbs = tasks
     .filter((task) => !task.done)
-    .map((data) => <TaskThumb {...data} />);
+    .map((data) => <TaskThumb key={data.id} {...data} />);
 
   return (
     <>

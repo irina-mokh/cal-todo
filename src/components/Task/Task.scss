@@ -1,0 +1,49 @@
+@use '../../styles/vars';
+
+.task {
+	display: flex;
+	justify-content: space-between;
+	list-style: none;
+	padding: 0.5em 1em;
+	margin: 0.5em 0;
+	box-shadow: 0 0 4px vars.$black;
+
+	.btn {
+		border: none;
+	}
+
+	&__wrapper {
+		flex-grow: 1;
+		position: relative;
+		align-items: stretch;
+	}
+	&__title{
+		margin-left: 5px;
+		height: 100%;
+		background-color: transparent;
+		color: vars.$light;
+		font-size: 1.1em;
+		border: none;
+
+	}
+
+	&_done {
+		.task__title{
+			color: vars.$darkGray;
+			text-decoration: line-through;
+		}
+	}
+
+	&__save,
+	&__delete {
+		padding: 5px;
+		margin: 0 3px;
+	}
+
+	&__save {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+	
+}
