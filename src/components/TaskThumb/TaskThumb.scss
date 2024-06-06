@@ -1,0 +1,8 @@
+@use '../../styles/vars';
+.day__task {
+	border: 1px solid vars.$gray;
+	font-size: 12px;
+	padding: 2px 5px;
+	border-radius: 4px;
+	margin-bottom: 3px;
+}

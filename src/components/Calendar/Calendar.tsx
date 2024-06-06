@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { getDates } from '../../utils.tsx';
 import { Day } from '../Day/Day';
-import { useSelector } from 'react-redux';
-import { IState } from '../../types/index.js';
+import { useDateIndexes } from '../../hooks';
 
 const MONTH_NAMES = [
   'January',
@@ -18,15 +17,12 @@ const MONTH_NAMES = [
   'November',
   'December',
 ];
-const WEEK_NAMES = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+const WEEK_NAMES = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
 
 export const Calendar = () => {
-  const store = [...useSelector((state: IState) => state.tasks)];
-
   const now = new Date();
   const [date, setDate] = useState<Date>(now);
-  const m = date.getMonth();
-  const y = date.getFullYear();
+  const { y, m } = useDateIndexes(date);
   const days = getDates(date);
 
   const daysRender = days.map((day, index) => <Day key={day.toDateString() + index} date={day} />);

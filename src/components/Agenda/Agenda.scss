@@ -1,0 +1,8 @@
+.agenda {
+	min-height: 50vh;
+	&__add {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+}

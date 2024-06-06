@@ -1,19 +1,12 @@
 export interface IState {
-  date: DateState;
-  tasks: TasksState;
+  tasks: ITasksState;
 }
-
-export type DateState = {
-  current: Date;
-}
-export type TasksState = Array<IYear>
-
-export type IYear = Array<IMonth>
-export type IMonth = Array<IDay>
-export type IDay = Array<ITask>
+export type ITasksState = Array<ITask>;
 
 export interface ITask {
   id: string;
+  // toLocaleDateString
+  date: string;
   title: string;
   done: boolean;
 }

@@ -100,4 +100,9 @@ body {
   text-decoration: none;
 }
 
-
+.input {
+  padding: 0.5em;
+  border: 1px solid vars.$gray;
+  background-color: transparent;
+  color: vars.$light;
+}
