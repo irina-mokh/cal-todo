@@ -18,14 +18,19 @@ export const Day = ({ date }: DayProps) => {
 
   const req = '' + y + (m < 9 ? '0' + (m + 1) : m + 1) + (d < 10 ? '0' + d : d);
   useEffect(() => {
-    fetch(`https://isdayoff.ru/${req}`, {
-      method: 'GET',
-      headers: { 'Content-Type': 'application/json' },
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        setIsDayOff(!!result);
-      });
+    try {
+      fetch(`https://isdayoff.ru/${req}`, {
+        method: 'GET',
+        mode: 'cors',
+        headers: { 'Content-Type': 'application/json' },
+      })
+        .then((res) => res.json())
+        .then((result) => {
+          setIsDayOff(!!result);
+        });
+    } catch (err) {
+      console.log(err);
+    }
   }, []);
 
   const [isModal, setIsModal] = useState(false);

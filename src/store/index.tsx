@@ -12,7 +12,7 @@ const persistedState = () => {
   return state;
 };
 const rootReducer = combineReducers({
-  // date: dateReducer,
+  // auth: authReducer,
   tasks: tasksReducer,
 });
 
