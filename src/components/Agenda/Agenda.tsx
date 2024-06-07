@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { ITask } from '../../types';
 import { useDispatch } from 'react-redux';
 import { createTask } from '../../store/tasksReducer';
 import { Task } from '../Task/Task';
+import { ITask } from '../../types';
 
 type AgendaProps = {
   date: Date,

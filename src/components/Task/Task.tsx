@@ -1,7 +1,7 @@
 import React from 'react';
-import { ITask } from '../../types';
 import { useDispatch } from 'react-redux';
 import { deleteTask, editTask } from '../../store/tasksReducer';
+import { ITask } from '../../types';
 
 export const Task = (props: ITask) => {
   const { title, done, id } = props;

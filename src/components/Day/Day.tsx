@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { createSelector } from '@reduxjs/toolkit';
+import { RootState } from '../../store';
 import { Modal } from '../Modal/Modal';
 import { Agenda } from '../Agenda/Agenda';
-import { useSelector } from 'react-redux';
-import { RootState } from '../../store';
-import { createSelector } from '@reduxjs/toolkit';
-import { ITask } from '../../types';
 import { TaskThumb } from '../TaskThumb/TaskThumb';
 import { useDateIndexes } from '../../hooks';
+import { ITask } from '../../types';
 
 type DayProps = {
   date: Date,

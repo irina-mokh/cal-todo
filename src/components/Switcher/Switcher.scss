@@ -2,16 +2,17 @@
 
 .switcher {
   &__input {
-    // display: none;
     &:checked ~ .switcher__bar::after {
       transform: translateX(15px);
     }
   }
   display: flex;
   align-items: center;
+
   &__text {
     display: inline-block;
   }
+  
   &__bar {
     display: inline-block;
     width: 40px;

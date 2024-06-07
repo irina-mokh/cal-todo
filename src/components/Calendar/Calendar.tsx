@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { getDates, getNumOfDays, slideToDate } from '../../utils.tsx';
 import { Day } from '../Day/Day';
-import { useDateIndexes } from '../../hooks';
 import { Switcher } from '../Switcher';
+import { getDates, getNumOfDays, slideToDate } from '../../utils.tsx';
+import { useDateIndexes } from '../../hooks';
 
 const MONTH_NAMES = [
   'January',
